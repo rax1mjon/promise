@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f0f0;
+  color: #f0f0f0;
+  padding: 75px 45px 0;
+  background: url("https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80")
+    no-repeat center center fixed;
+  background-size: cover;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  background-color: rgba(128, 137, 202, 0.661);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 25px;
+}
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2.5em;
+  margin-bottom: 45px;
+}
+
+h4 {
+  color: #ffffff;
+  font-size: 1.5em;
+}
+
+p {
+  padding-top: 10px;
+  color: #ffdddd;
+  font-size: 1.2em;
+}
+
+li div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15px;
+  gap: 15px;
+}
+
+li div button {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+li div button:nth-child(2) {
+  background-color: #198619;
+}
+li div button:nth-child(3) {
+  background-color: #4d4dff;
+}
+
+.todos {
+  padding-right: 50px;
+}
+
+.todos span {
+  position: absolute;
+  top: 25px;
+  right: 15px;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  z-index: 111;
+}
+
+nav button {
+  background-color: #4d4dff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: 900;
+  transition: 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav button:nth-child(1) {
+  background-color: #ff4d4d;
+  transform: rotate(180deg);
+}
+
+nav button:hover {
+  background-color: #3b3bff;
+}
+
+nav button:active {
+  background-color: #2a2aff;
+  transform: scale(0.95);
+}
+
+nav button:nth-child(1):active {
+  background-color: #ff3333;
+  transform: rotate(180deg) scale(0.95);
+}
+
+.album,.comments {
+  margin-top: 20px;
+  background-color: #4d4dff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.album:hover {
+  background-color: #3b3bff;
+}
+.album:active {
+  background-color: #2a2aff;
+  transform: scale(0.95);
+}
