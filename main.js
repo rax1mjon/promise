@@ -38,13 +38,20 @@ function getData(url, userIdFunc, IdName = "userId") {
   return promise;
 }
 
-if (userList)
-  getData("https://jsonplaceholder.typicode.com/users", false).then((users) => {
-    users.map((user) => {
+const UserData = async () => {
+  let data = await getData("https://jsonplaceholder.typicode.com/users", false);
+  
+  try {
+    data.map((user) => {
       addUser(user, userList);
     });
     buttonClickUsers();
-  });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+if (userList) UserData();
 
 function addUser({ id, name, username, email, address: { street } }, userList) {
   let li = `

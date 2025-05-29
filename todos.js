@@ -1,11 +1,22 @@
 let userListTodos = document.querySelector("ul");
 
-getData("https://jsonplaceholder.typicode.com/todos", userId).then((users) => {
-  users.forEach((el) => {
-    addUserTodos(el, userListTodos);
-  });
-  todosBtnClick();
-});
+const TodosData = async () => {
+  let data = await getData(
+    "https://jsonplaceholder.typicode.com/todos",
+    userId
+  );
+
+  try {
+    data.map((user) => {
+      addUserTodos(user, userListTodos);
+    });
+    todosBtnClick();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+TodosData();
 
 function addUserTodos({ userId, id, title, completed }, userList) {
   let li = `

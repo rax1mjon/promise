@@ -1,12 +1,22 @@
 let userListTodos = document.querySelector("ul");
 
-getData("https://jsonplaceholder.typicode.com/comments", userId, "postId").then(
-  (users) => {
-    users.forEach((el) => {
-      addUserComments(el, userListTodos);
+const CommentData = async () => {
+  let data = await getData(
+    "https://jsonplaceholder.typicode.com/comments",
+    userId,
+    "postId"
+  );
+
+  try {
+    data.map((user) => {
+      addUserComments(user, userListTodos);
     });
+  } catch (error) {
+    console.log(error);
   }
-);
+};
+
+CommentData();
 
 function addUserComments({ name, email, body }, userList) {
   let li = `

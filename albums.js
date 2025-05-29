@@ -1,10 +1,21 @@
 let userListTodos = document.querySelector("ul");
 
-getData("https://jsonplaceholder.typicode.com/albums", userId).then((users) => {
-  users.forEach((el) => {
-    addUserAlbums(el, userListTodos);
-  });
-});
+const albumsData = async () => {
+  let data = await getData(
+    "https://jsonplaceholder.typicode.com/albums",
+    userId
+  );
+
+  try {
+    data.map((user) => {
+      addUserAlbums(user, userListTodos);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+albumsData();
 
 function addUserAlbums({ title }, userList) {
   let li = `
